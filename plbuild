@@ -1,0 +1,40 @@
+#!/bin/sh
+
+clear
+
+. /etc/os-release
+
+BUILDDIR="Progwilinux"
+
+ISONAME="progwilinux"
+ISOCODE="mouse"
+ISOVER="26.4"
+
+echo -e "\e[1;32mplbuild 26.4\e[0m on $PRETTY_NAME"
+
+cd ~/$BUILDDIR
+
+while true; do
+	echo -ne "Що ви хочете зібрати?: " && read chse
+	if [ "$chse" = "squashfs" ]; then
+		rm rootfs.squashfs
+		cd squashfs
+		echo -e "\e[1;32mСтартуємо збірку...\e[0m"
+		mksquashfs . ../rootfs.squashfs
+		cd ..
+	elif [ "$chse" = "initramfs" ]; then
+		rm initramfs.igz
+		cd initramfs
+		echo -e "\e[1;32mСтартуємо збірку...\e[0m"
+		find . | cpio -o -H newc | gzip -9 > ../initramfs.igz
+		cd ..
+	elif [ "$chse" = "iso" ]; then
+		rm $ISONAME-$ISOVER-$ISOCODE.iso
+		echo -e "\e[1;32mСтартуємо збірку...\e[0m"
+		grub-mkrescue -o $ISONAME-$ISOVER-$ISOCODE.iso ~/$BUILDDIR/iso
+	elif [ "$chse" = "exit" ]; then
+		break
+	elif [ "$chse" = "curdir" ]; then
+		pwd
+	fi
+done
