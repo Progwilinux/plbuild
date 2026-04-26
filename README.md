@@ -1,5 +1,5 @@
 # 🖥️ plbuild
-Скрипт для збірки [Progwilinux](https://github.com/progwi0/progwilinux).
+🖥️ Скрипт для збірки [Progwilinux](https://github.com/progwi0/progwilinux).
 
 Цей скрипт виступає маленьким командним рядком, ось команди:
 
