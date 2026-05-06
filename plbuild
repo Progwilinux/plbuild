@@ -10,7 +10,7 @@ ISONAME="progwilinux"
 ISOCODE="mouse"
 ISOVER="26.4"
 
-echo -e "\e[1;32mplbuild 26.4\e[0m on $PRETTY_NAME"
+echo -e "\e[1;32mplbuild 26.4.1\e[0m on $PRETTY_NAME. Made by \e[0;33mprogwi0\e[0m for \033[34mProgwilinux\e[0m."
 
 cd ~/$BUILDDIR
 
