@@ -1,16 +1,16 @@
 # 🖥️ plbuild
-🖥️ Скрипт для збірки [Progwilinux](https://github.com/progwi0/progwilinux).
+🖥️ [Progwilinux](https://github.com/progwi0/progwilinux) build script.
 
-Цей скрипт виступає маленьким командним рядком, ось команди:
+This script is smth like minishell, so here's the commands:
 
-```initramfs``` - Зібрати initramfs,
-```squashfs``` - Зібрати squashfs,
-```iso``` - Зібрати iso.
+```initramfs``` - build initramfs,
+```squashfs``` - build squashfs,
+```iso``` - make iso.
 
-Потрібні пакети (Debian):
+Dependencies (Debian):
 - squashfs-tools
 - xorriso
 - mtools
 
-Встановка пакетів:
+for lazy potatoes:
 ```sudo apt install squashfs-tools xorriso mtools```
